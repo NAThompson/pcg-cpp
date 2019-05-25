@@ -1,6 +1,6 @@
-# 
+#
 # PCG Random Number Generation for C++.
-# 
+#
 # Copyright 2014-2017 Melissa O'Neill <oneill@pcg-random.org>,
 #                     and the PCG Project contributors.
 #
@@ -19,14 +19,14 @@
 # visit http://www.pcg-random.org/.
 #
 
+PREFIX = /usr/local
+
 all:
 	cd test-high; $(MAKE)
 	cd sample; $(MAKE)
 
-PREFIX = /usr/local
-
-install: all
-	install -m 0644 include/*.hpp $PREFIX/include
+install:
+	install -m 0644 include/*.hpp $(PREFIX)/include
 
 test:   all
 	cd test-high; $(MAKE) test
@@ -35,4 +35,3 @@ clean:
 	cd test-high; $(MAKE) clean
 	cd sample; $(MAKE) clean
 
-	
